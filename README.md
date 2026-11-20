@@ -8,7 +8,7 @@ Given a raw web server access log, use PowerShell to:
 1. Split the log into per-day folders, with one file per IP address.
 2. Split the log into per-IP folders, with one file per day.
 3. Count requests per IP and rank the top talkers.
-4. Use the results to identify and justify malicious IP addressses.
+4. Use the results to identify and justify malicious IP addresses.
 
 ## Dataset
 | Metric | Value |
@@ -106,7 +106,7 @@ All three top IPs are running the same playbook against a WordPress site: finger
 188.166.235.119 - - [02/Nov/2025:03:13:16 -0600] "POST /xmlrpc.php HTTP/1.1" 200 413 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ... Chrome/95.0.4638.69 Safari/537.36"
 ```
 
-Every request from this IP is a `POST` to `/xmlrpc.php`. That file is WordPress's XML-RPC API, it's being abused because it accepts a username and password on every call bypassing the login page's usual defenses. The client sending 87,759 POST requests to the server is a credential brute force attack.
+Every request from this IP is a `POST` to `/xmlrpc.php`. That file is WordPress's XML-RPC API, it's being abused because it accepts a username and password on every call bypassing the login page's usual defenses. The client sending 84,759 POST requests to the server is a credential brute force attack.
 
 ### 2. 208.84.101.66: fingerprinting plus brute force (2,008 requests)
  
